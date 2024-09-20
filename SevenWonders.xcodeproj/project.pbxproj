@@ -7,23 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50DEF3C2C98E03200768480 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6B67A2C973F7400FB2F25 /* Player.swift */; };
+		D50DEF3D2C98E04000768480 /* GameValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53754D82C9748B900811942 /* GameValidationError.swift */; };
+		D50DEF3E2C98E04000768480 /* PlayerValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53754DA2C9749A500811942 /* PlayerValidationError.swift */; };
+		D50DEF3F2C98E04000768480 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E41B2C9731FD001644D8 /* Game.swift */; };
+		D50DEF412C98E04F00768480 /* SevenWondersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */; };
+		D50DEF422C98E04F00768480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40D2C9730E6001644D8 /* ContentView.swift */; };
+		D50DEF442C98E3EA00768480 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DEF432C98E3EA00768480 /* GameTest.swift */; };
+		D53754D92C9748B900811942 /* GameValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53754D82C9748B900811942 /* GameValidationError.swift */; };
+		D53754DB2C9749A500811942 /* PlayerValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53754DA2C9749A500811942 /* PlayerValidationError.swift */; };
+		D53754EE2C97589800811942 /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53754ED2C97589800811942 /* PlayerTest.swift */; };
+		D5A6B67B2C973F7400FB2F25 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6B67A2C973F7400FB2F25 /* Player.swift */; };
 		D5B3E40C2C9730E6001644D8 /* SevenWondersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */; };
 		D5B3E40E2C9730E6001644D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40D2C9730E6001644D8 /* ContentView.swift */; };
-		D5B3E4102C9730E6001644D8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40F2C9730E6001644D8 /* Item.swift */; };
 		D5B3E4122C9730E8001644D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B3E4112C9730E8001644D8 /* Assets.xcassets */; };
 		D5B3E4152C9730E8001644D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B3E4142C9730E8001644D8 /* Preview Assets.xcassets */; };
+		D5B3E41C2C9731FD001644D8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E41B2C9731FD001644D8 /* Game.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D53754E72C97586E00811942 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B3E4002C9730E6001644D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B3E4072C9730E6001644D8;
+			remoteInfo = SevenWonders;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		D50DEF432C98E3EA00768480 /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		D53754D82C9748B900811942 /* GameValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameValidationError.swift; sourceTree = "<group>"; };
+		D53754DA2C9749A500811942 /* PlayerValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerValidationError.swift; sourceTree = "<group>"; };
+		D53754E32C97586E00811942 /* SevenWondersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenWondersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53754ED2C97589800811942 /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
+		D5A6B67A2C973F7400FB2F25 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D5B3E4082C9730E6001644D8 /* SevenWonders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenWonders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenWondersApp.swift; sourceTree = "<group>"; };
 		D5B3E40D2C9730E6001644D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D5B3E40F2C9730E6001644D8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D5B3E4112C9730E8001644D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5B3E4142C9730E8001644D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5B3E41B2C9731FD001644D8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D53754E02C97586E00811942 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B3E4052C9730E6001644D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +68,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D53754DC2C9752DD00811942 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				D5B3E41B2C9731FD001644D8 /* Game.swift */,
+				D53754D82C9748B900811942 /* GameValidationError.swift */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		D53754DD2C9752E800811942 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				D5A6B67A2C973F7400FB2F25 /* Player.swift */,
+				D53754DA2C9749A500811942 /* PlayerValidationError.swift */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		D53754E42C97586E00811942 /* SevenWondersTests */ = {
+			isa = PBXGroup;
+			children = (
+				D53754EC2C97588300811942 /* Model */,
+			);
+			path = SevenWondersTests;
+			sourceTree = "<group>";
+		};
+		D53754EC2C97588300811942 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D53754ED2C97589800811942 /* PlayerTest.swift */,
+				D50DEF432C98E3EA00768480 /* GameTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5A6B6792C973F4100FB2F25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D53754DD2C9752E800811942 /* player */,
+				D53754DC2C9752DD00811942 /* game */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D5B3E3FF2C9730E6001644D8 = {
 			isa = PBXGroup;
 			children = (
 				D5B3E40A2C9730E6001644D8 /* SevenWonders */,
+				D53754E42C97586E00811942 /* SevenWondersTests */,
 				D5B3E4092C9730E6001644D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B3E4082C9730E6001644D8 /* SevenWonders.app */,
+				D53754E32C97586E00811942 /* SevenWondersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,9 +133,9 @@
 		D5B3E40A2C9730E6001644D8 /* SevenWonders */ = {
 			isa = PBXGroup;
 			children = (
+				D5A6B6792C973F4100FB2F25 /* Model */,
 				D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */,
 				D5B3E40D2C9730E6001644D8 /* ContentView.swift */,
-				D5B3E40F2C9730E6001644D8 /* Item.swift */,
 				D5B3E4112C9730E8001644D8 /* Assets.xcassets */,
 				D5B3E4132C9730E8001644D8 /* Preview Content */,
 			);
@@ -73,6 +153,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D53754E22C97586E00811942 /* SevenWondersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53754E92C97586E00811942 /* Build configuration list for PBXNativeTarget "SevenWondersTests" */;
+			buildPhases = (
+				D53754DF2C97586E00811942 /* Sources */,
+				D53754E02C97586E00811942 /* Frameworks */,
+				D53754E12C97586E00811942 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D53754E82C97586E00811942 /* PBXTargetDependency */,
+			);
+			name = SevenWondersTests;
+			productName = SevenWondersTests;
+			productReference = D53754E32C97586E00811942 /* SevenWondersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D5B3E4072C9730E6001644D8 /* SevenWonders */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B3E4182C9730E8001644D8 /* Build configuration list for PBXNativeTarget "SevenWonders" */;
@@ -100,6 +198,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					D53754E22C97586E00811942 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = D5B3E4072C9730E6001644D8;
+					};
 					D5B3E4072C9730E6001644D8 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -119,11 +221,19 @@
 			projectRoot = "";
 			targets = (
 				D5B3E4072C9730E6001644D8 /* SevenWonders */,
+				D53754E22C97586E00811942 /* SevenWondersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D53754E12C97586E00811942 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B3E4062C9730E6001644D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,19 +246,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D53754DF2C97586E00811942 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D53754EE2C97589800811942 /* PlayerTest.swift in Sources */,
+				D50DEF3C2C98E03200768480 /* Player.swift in Sources */,
+				D50DEF412C98E04F00768480 /* SevenWondersApp.swift in Sources */,
+				D50DEF422C98E04F00768480 /* ContentView.swift in Sources */,
+				D50DEF3D2C98E04000768480 /* GameValidationError.swift in Sources */,
+				D50DEF3E2C98E04000768480 /* PlayerValidationError.swift in Sources */,
+				D50DEF3F2C98E04000768480 /* Game.swift in Sources */,
+				D50DEF442C98E3EA00768480 /* GameTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B3E4042C9730E6001644D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D5B3E40E2C9730E6001644D8 /* ContentView.swift in Sources */,
-				D5B3E4102C9730E6001644D8 /* Item.swift in Sources */,
+				D5A6B67B2C973F7400FB2F25 /* Player.swift in Sources */,
 				D5B3E40C2C9730E6001644D8 /* SevenWondersApp.swift in Sources */,
+				D5B3E41C2C9731FD001644D8 /* Game.swift in Sources */,
+				D53754D92C9748B900811942 /* GameValidationError.swift in Sources */,
+				D53754DB2C9749A500811942 /* PlayerValidationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D53754E82C97586E00811942 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B3E4072C9730E6001644D8 /* SevenWonders */;
+			targetProxy = D53754E72C97586E00811942 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D53754EA2C97586E00811942 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NKZB428J76;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SevenWondersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenWonders.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SevenWonders";
+			};
+			name = Debug;
+		};
+		D53754EB2C97586E00811942 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NKZB428J76;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SevenWondersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenWonders.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SevenWonders";
+			};
+			name = Release;
+		};
 		D5B3E4162C9730E8001644D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +501,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D53754E92C97586E00811942 /* Build configuration list for PBXNativeTarget "SevenWondersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53754EA2C97586E00811942 /* Debug */,
+				D53754EB2C97586E00811942 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D5B3E4032C9730E6001644D8 /* Build configuration list for PBXProject "SevenWonders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

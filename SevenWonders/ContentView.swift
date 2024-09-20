@@ -5,21 +5,22 @@
 //  Created by Tom Bintener on 15/09/2024.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var games: [Game]
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(games) { game in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("Game at \(game.date, format: Date.FormatStyle(date: .numeric, time: .shortened))")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(game.date, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                        Text(game.displayPlayers())
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -29,27 +30,34 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addGame) {
+                        Label("Add Game", systemImage: "plus")
                     }
                 }
             }
         } detail: {
-            Text("Select an item")
+            Text("Select a game")
         }
     }
 
-    private func addItem() {
+    private func addGame() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let player1: Player = try! Player.Builder().name("Player1").build()
+            let player2: Player = try! Player.Builder().name("Player2").build()
+
+            let newGame = try! Game.Builder()
+                .player1(player1)
+                .player2(player2)
+                .build()
+
+            modelContext.insert(newGame)
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(games[index])
             }
         }
     }
@@ -57,5 +65,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Game.self, inMemory: true)
 }
