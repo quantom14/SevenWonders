@@ -48,6 +48,7 @@
 		D5B3E4112C9730E8001644D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5B3E4142C9730E8001644D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5B3E41B2C9731FD001644D8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		D5ED63D22C9E16B200CBA5E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 		D5B3E3FF2C9730E6001644D8 = {
 			isa = PBXGroup;
 			children = (
+				D5ED63D22C9E16B200CBA5E0 /* README.md */,
 				D5B3E40A2C9730E6001644D8 /* SevenWonders */,
 				D53754E42C97586E00811942 /* SevenWondersTests */,
 				D5B3E4092C9730E6001644D8 /* Products */,
