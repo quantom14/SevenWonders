@@ -17,7 +17,7 @@ struct ContentView: View {
         case games
         case stats
     }
-    
+
     var body: some View {
         TabView(selection: $selection) {
             GameNavigationView()

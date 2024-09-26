@@ -11,7 +11,7 @@ enum PlayerValidationError: Error {
     case emptyName
     case multipleVictoryCondition
 
-    var localizedDescription: String {
+    var errorMessage: String {
         switch self {
         case .emptyName:
             return "A player must have a name"

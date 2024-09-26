@@ -14,7 +14,7 @@ struct GameListView: View {
 
     var body: some View {
         List {
-            ForEach(games.sorted(by: { $0.date > $1.date })) { game in
+            ForEach(getGamesSortedByDate()) { game in
                 NavigationLink {
                     GameDetailView(game: game)
                 } label: {
@@ -28,9 +28,13 @@ struct GameListView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(games[index])
+                modelContext.delete(getGamesSortedByDate()[index])
             }
         }
+    }
+
+    private func getGamesSortedByDate() -> [Game] {
+        games.sorted(by: { $0.date > $1.date })
     }
 }
 
