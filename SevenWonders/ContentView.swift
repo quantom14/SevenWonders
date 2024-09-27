@@ -9,8 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    let dateFormat: Date.FormatStyle = .init(date: .numeric, time: .shortened)
-
     @State private var selection: Tab = .games
 
     enum Tab {

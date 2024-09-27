@@ -10,11 +10,11 @@ import SwiftUI
 
 struct GameListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var games: [Game]
+    @Query(sort: \Game.date) private var games: [Game]
 
     var body: some View {
         List {
-            ForEach(getGamesSortedByDate()) { game in
+            ForEach(games) { game in
                 NavigationLink {
                     GameDetailView(game: game)
                 } label: {
@@ -28,13 +28,9 @@ struct GameListView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(getGamesSortedByDate()[index])
+                modelContext.delete(games[index])
             }
         }
-    }
-
-    private func getGamesSortedByDate() -> [Game] {
-        games.sorted(by: { $0.date > $1.date })
     }
 }
 

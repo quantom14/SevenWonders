@@ -14,8 +14,6 @@ struct GameNavigationView: View {
 
     @State private var isPresentingNewGame: Bool = false
 
-    let dateFormat: Date.FormatStyle = .init(date: .numeric, time: .shortened)
-
     var body: some View {
         NavigationView {
             VStack {

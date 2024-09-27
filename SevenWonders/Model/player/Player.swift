@@ -121,7 +121,7 @@ class Player {
             }
             // validate victory type
             if militaryVictory && scientificVictory {
-                throw PlayerValidationError.multipleVictoryCondition
+                throw PlayerValidationError.simultaneousVictoryCondition
             }
             return Player(name: name, bluePoints: bluePoints, greenPoints: greenPoints, yellowPoints: yellowPoints, purplePoints: purplePoints, pyramidPoints: pyramidPoints, tokenPoints: tokenPoints, coinPoints: coinPoints, militaryPoints: militaryPoints, militaryVictory: militaryVictory, scientificVictory: scientificVictory)
         }

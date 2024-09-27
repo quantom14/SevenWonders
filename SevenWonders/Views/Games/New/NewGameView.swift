@@ -130,7 +130,7 @@ struct NewGameView: View {
         switch error {
         case let error as PlayerValidationError:
             errorMessage = error.errorMessage
-        case let error as PlayerValidationError:
+        case let error as GameValidationError:
             errorMessage = error.errorMessage
         default:
             errorMessage = error.localizedDescription

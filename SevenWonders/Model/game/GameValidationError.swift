@@ -16,7 +16,7 @@ enum GameValidationError: Error {
         case .emptyPlayer:
             return "The player must not be empty"
         case .multipleVictoryCondition:
-            return "Both players cannot have a victory condition simultaneously"
+            return "Two players cannot simultaneously win the game via a victory condition"
         }
     }
 }

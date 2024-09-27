@@ -57,10 +57,27 @@ final class Game {
             guard let player1 = player1 else {
                 throw GameValidationError.emptyPlayer
             }
+            
             guard let player2 = player2 else {
                 throw GameValidationError.emptyPlayer
             }
+            
+            try validateVictories(player1: player1, player2: player2)
+            
             return Game(date: date, player1: player1, player2: player2)
+        }
+        
+        // Validation method to ensure only one victory condition is true
+        private func validateVictories(player1: Player, player2: Player) throws {
+            let victories = [
+                player1.militaryVictory, player1.scientificVictory,
+                player2.militaryVictory, player2.scientificVictory
+            ]
+            let victoryCount = victories.filter { $0 }.count
+
+            if victoryCount > 1 {
+                throw GameValidationError.multipleVictoryCondition
+            }
         }
     }
 }
