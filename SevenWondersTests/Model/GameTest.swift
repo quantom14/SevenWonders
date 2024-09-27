@@ -13,11 +13,11 @@ import Testing
     }
 }
 
-@Test func test_create_invalid_player1() {
-    #expect(throws: PlayerValidationError.multipleVictoryCondition) {
-        try randomPlayer()
-            .militaryVictory(true)
-            .scientificVictory(true)
+@Test func test_create_game_simultaneous_player_victories() {
+    #expect(throws: GameValidationError.multipleVictoryCondition) {
+        try Game.Builder()
+            .player1(randomPlayer().militaryVictory(true).scientificVictory(false).build())
+            .player2(randomPlayer().militaryVictory(true).scientificVictory(false).build())
             .build()
     }
 }

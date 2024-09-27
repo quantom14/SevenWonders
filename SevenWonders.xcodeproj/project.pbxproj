@@ -36,6 +36,8 @@
 		D57A1D6C2CA603E300FD4FA6 /* PointsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A1D6A2CA603E300FD4FA6 /* PointsRowView.swift */; };
 		D57A1D6E2CA6040400FD4FA6 /* VictoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A1D6D2CA6040400FD4FA6 /* VictoryRowView.swift */; };
 		D57A1D6F2CA6040400FD4FA6 /* VictoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A1D6D2CA6040400FD4FA6 /* VictoryRowView.swift */; };
+		D57A1D702CA68B8C00FD4FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B3E4142C9730E8001644D8 /* Preview Assets.xcassets */; };
+		D57A1D712CA68B8C00FD4FA6 /* PreviewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A1D4F2C9F2A3A00FD4FA6 /* PreviewMock.swift */; };
 		D5A6B67B2C973F7400FB2F25 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6B67A2C973F7400FB2F25 /* Player.swift */; };
 		D5B3E40C2C9730E6001644D8 /* SevenWondersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */; };
 		D5B3E40E2C9730E6001644D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3E40D2C9730E6001644D8 /* ContentView.swift */; };
@@ -320,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57A1D702CA68B8C00FD4FA6 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +348,7 @@
 				D50DEF3C2C98E03200768480 /* Player.swift in Sources */,
 				D50DEF412C98E04F00768480 /* SevenWondersApp.swift in Sources */,
 				D57A1D6F2CA6040400FD4FA6 /* VictoryRowView.swift in Sources */,
+				D57A1D712CA68B8C00FD4FA6 /* PreviewMock.swift in Sources */,
 				D57A1D652CA0A93800FD4FA6 /* GameListView.swift in Sources */,
 				D50DEF422C98E04F00768480 /* ContentView.swift in Sources */,
 				D50DEF3D2C98E04000768480 /* GameValidationError.swift in Sources */,

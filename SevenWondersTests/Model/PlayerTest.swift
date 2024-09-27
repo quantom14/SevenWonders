@@ -20,7 +20,7 @@ import Testing
 }
 
 @Test func test_create_invalid_player() {
-    #expect(throws: PlayerValidationError.multipleVictoryCondition) {
+    #expect(throws: PlayerValidationError.simultaneousVictoryCondition) {
         try randomPlayer()
             .militaryVictory(true)
             .scientificVictory(true)

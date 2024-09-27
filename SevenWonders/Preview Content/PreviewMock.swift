@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-class PreviewMock {
+public class PreviewMock {
     static func createEmptyModelContextMock() -> ModelContext {
         // Initialize an in-memory model context
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
