@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StatsView: View {
     var body: some View {
-        Text("Not yet implemented, please come back later!")
+        NavigationView {
+            Text("Not yet implemented, please come back later!")
+        }
     }
 }
 

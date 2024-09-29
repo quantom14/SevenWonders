@@ -26,15 +26,17 @@ struct GameNavigationView: View {
             .navigationTitle("Games")
             .frame(minWidth: 300)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                if !games.isEmpty {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
                 }
                 ToolbarItem {
                     AddButton(isPresentingNewGame: $isPresentingNewGame)
                 }
             }
             .sheet(isPresented: $isPresentingNewGame) {
-                NewGameView()
+                NewGameView(isPresentingNewGame: $isPresentingNewGame)
             }
         }
     }

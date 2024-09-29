@@ -30,6 +30,8 @@ struct NewGameView: View {
     @State private var isPresentingError: Bool = false
     @State private var errorMessage: String = ""
 
+    @Binding var isPresentingNewGame: Bool
+
     var body: some View {
         NavigationView {
             Form {
@@ -76,11 +78,16 @@ struct NewGameView: View {
                     }
                 }
             }
+            .navigationTitle("New Game")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Cancel") {
+                        isPresentingNewGame = false // Dismiss the sheet without saving
+                    }
+                }
+            }
         }
-        .navigationTitle("New Game")
-        .navigationBarItems(leading: Button("Cancel") {
-            dismiss()
-        })
     }
 
     fileprivate func saveNewGame() {
@@ -141,5 +148,6 @@ struct NewGameView: View {
 }
 
 #Preview {
-    NewGameView()
+    @Previewable @State var isPresentingNewGame = true
+    NewGameView(isPresentingNewGame: $isPresentingNewGame)
 }

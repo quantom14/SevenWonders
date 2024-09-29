@@ -14,7 +14,10 @@ struct ContentView: View {
     enum Tab {
         case games
         case stats
+        case profile
     }
+
+    let statsViewImplemented = false // TODO: implement a Stats View
 
     var body: some View {
         TabView(selection: $selection) {
@@ -23,11 +26,18 @@ struct ContentView: View {
                     Label("Games", systemImage: "die.face.4.fill")
                 }
                 .tag(Tab.games)
-            StatsView()
+            if statsViewImplemented {
+                StatsView()
+                    .tabItem {
+                        Label("Stats", systemImage: "chart.bar.fill")
+                    }
+                    .tag(Tab.stats)
+            }
+            ProfileHostView()
                 .tabItem {
-                    Label("Stats", systemImage: "chart.bar.fill")
+                    Label("Profile", systemImage: "person.crop.circle")
                 }
-                .tag(Tab.stats)
+                .tag(Tab.profile)
         }
     }
 }

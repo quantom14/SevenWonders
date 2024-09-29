@@ -13,7 +13,7 @@ public class PreviewMock {
     static func createEmptyModelContextMock() -> ModelContext {
         // Initialize an in-memory model context
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try! ModelContainer(for: Game.self, Player.self, configurations: configuration)
+        let container = try! ModelContainer(for: Game.self, Player.self, Profile.self, configurations: configuration)
         let modelContext = ModelContext(container)
 
         // Return the populated model context
@@ -23,16 +23,23 @@ public class PreviewMock {
     static func createModelContextMock() -> ModelContext {
         // Initialize an in-memory model context
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try! ModelContainer(for: Game.self, Player.self, configurations: configuration)
+        let container = try! ModelContainer(for: Game.self, Player.self, Profile.self, configurations: configuration)
         let modelContext = ModelContext(container)
 
         // Create some mock data
-        let games = generateRandomGames(count: 12)
+        var games = generateRandomGames(count: 12)
+
+        let player1: Player = try! randomPlayer().name("Tom").build()
+        let player2: Player = try! randomPlayer().name("Maria").build()
+        games.append(generateRandomGameWithPlayers(player1: player1, player2: player2)) // Tom played 1 game as player 1
+        games.append(generateRandomGameWithPlayers(player1: player2, player2: player1)) // Tom played 1 game as player 2
 
         // Add mock data to the model context
         for game in games {
             modelContext.insert(game)
         }
+
+        modelContext.insert(Profile(name: "Tom"))
 
         // Return the populated model context
         return modelContext
@@ -45,6 +52,10 @@ public class PreviewMock {
     static func generateRandomGame() -> Game {
         let player1: Player = try! randomPlayer().build()
         let player2: Player = try! randomPlayer().build()
+        return generateRandomGameWithPlayers(player1: player1, player2: player2)
+    }
+
+    static func generateRandomGameWithPlayers(player1: Player, player2: Player) -> Game {
         return try! Game.Builder()
             .date(randomDate(startingFrom: 2020, upTo: 2024))
             .player1(player1)

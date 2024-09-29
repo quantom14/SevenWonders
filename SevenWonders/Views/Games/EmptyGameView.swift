@@ -12,13 +12,12 @@ struct EmptyGameView: View {
     var body: some View {
         VStack {
             Text("Time to start playing!")
-            Text("")
+                .padding()
             Text(" Tap the '+' button to add a new game.")
-            // Spacer() // Push the message to the top
         }
         .foregroundColor(.gray)
         .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity) // Fill the space
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
