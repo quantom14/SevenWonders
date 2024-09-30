@@ -18,7 +18,15 @@ final class Game {
     var player2: Player
     
     func determineWinner() -> Player {
-        return player1
+        if player1.militaryVictory || player1.scientificVictory {
+            return player1
+        } else if player2.militaryVictory || player2.scientificVictory {
+            return player2
+        } else if player1.totalPoints > player2.totalPoints {
+            return player1
+        } else {
+            return player2
+        }
     }
     
     func displayPlayers() -> String {
