@@ -38,8 +38,8 @@ public class PreviewMock {
         for game in games {
             modelContext.insert(game)
         }
-
-        modelContext.insert(Profile(name: "Tom"))
+        let profile = Profile(name: "Tom", profileImage: UIImage(named: "Salem")!.pngData())
+        modelContext.insert(profile)
 
         // Return the populated model context
         return modelContext

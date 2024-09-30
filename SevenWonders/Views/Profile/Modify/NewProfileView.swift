@@ -13,13 +13,19 @@ struct NewProfileView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var name: String = ""
+    @State private var profileImage: Data?
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Profile")) {
-                    TextField("Name", text: $name)
-                    // Here you can add a way to select a profile picture
+                Section(header: Text("Player")) {
+                    HStack {
+                        TextField("Name", text: $name)
+                            .font(.largeTitle)
+                            .padding()
+                        Spacer()
+                        ProfileImagePickerView(profileImage: $profileImage)
+                    }
                 }
 
                 Section {
@@ -36,15 +42,13 @@ struct NewProfileView: View {
                         isPresented = false // Dismiss the sheet without saving
                     }
                 }
-                
             }
-            
         }
     }
 
     private func saveProfile() {
         // Create and save the profile
-        let newProfile = Profile(name: name)
+        let newProfile = Profile(name: name, profileImage: profileImage)
         modelContext.insert(newProfile)
         try? modelContext.save()
         // Dismiss the sheet after saving

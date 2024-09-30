@@ -12,11 +12,11 @@ import SwiftData
 class Profile {
     @Attribute(.unique) var id: UUID
     var name: String
-    // var profilePicture: Data?
+    var profileImage: Data?
 
-    init(name: String) { // }, profilePicture: Data? = nil) {
+    init(name: String, profileImage: Data? = nil) {
         self.id = UUID()
         self.name = name
-        // self.profilePicture = profilePicture
+        self.profileImage = profileImage
     }
 }

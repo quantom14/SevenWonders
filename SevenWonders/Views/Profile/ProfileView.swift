@@ -20,10 +20,7 @@ struct ProfileView: View {
                         .font(.largeTitle)
                         .padding()
                     Spacer()
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .foregroundColor(.gray)
-                        .frame(width: 80, height: 80)
+                    ProfileImageView(imageData: profile.profileImage)
                 }
             }
             Section(header: Text("Player Information")) {

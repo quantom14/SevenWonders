@@ -5,6 +5,7 @@
 //  Created by Tom Bintener on 27/09/2024.
 //
 
+import PhotosUI
 import SwiftData
 import SwiftUI
 
@@ -14,6 +15,7 @@ struct EditProfileView: View {
 
     @Binding var isPresented: Bool
 
+    @State private var profileImage: Data? = nil
     @State private var showAlert: Bool = false // State variable to show the alert
     @State var name: String = ""
 
@@ -26,12 +28,10 @@ struct EditProfileView: View {
                             .font(.largeTitle)
                             .padding()
                         Spacer()
-                        Image(systemName: "person.circle")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .frame(width: 80, height: 80)
+                        ProfileImagePickerView(profileImage: $profileImage)
                     }
                 }
+
                 Section {
                     Button("Save") {
                         saveProfile()
@@ -47,6 +47,7 @@ struct EditProfileView: View {
             .onAppear {
                 if let profile = profiles.first {
                     name = profile.name
+                    profileImage = profile.profileImage
                 }
             }
             .toolbar {
@@ -72,6 +73,7 @@ struct EditProfileView: View {
     private func saveProfile() {
         guard let profile = profiles.first else { return } // Get the first profile to update
         profile.name = name // Update the name
+        profile.profileImage = profileImage // Update the profile image
         try? modelContext.save() // Save the changes
         isPresented = false
     }
