@@ -44,10 +44,6 @@ struct EditProfileView: View {
                 }
 
                 Section {
-                    Button("Save") {
-                        saveProfile()
-                    }
-                    .disabled(name.isEmpty)
                     Button("Delete") {
                         showAlert = true
                     }
@@ -64,10 +60,16 @@ struct EditProfileView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         isPresented = false // Dismiss the sheet without saving
                     }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        saveProfile()
+                    }
+                    .disabled(name.isEmpty)
                 }
             }
             .alert(isPresented: $showAlert) {

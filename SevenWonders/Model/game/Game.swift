@@ -70,6 +70,10 @@ final class Game {
                 throw GameValidationError.emptyPlayer
             }
             
+            if date > .now {
+                throw GameValidationError.futureDate
+            }
+            
             try validateVictories(player1: player1, player2: player2)
             
             return Game(date: date, player1: player1, player2: player2)

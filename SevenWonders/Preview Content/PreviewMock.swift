@@ -57,7 +57,7 @@ public class PreviewMock {
 
     static func generateRandomGameWithPlayers(player1: Player, player2: Player) -> Game {
         return try! Game.Builder()
-            .date(randomDate(startingFrom: 2020, upTo: 2024))
+            .date(randomDate(startingFrom: 2020))
             .player1(player1)
             .player2(player2)
             .build()
@@ -92,21 +92,19 @@ public class PreviewMock {
         return Int.random(in: min ..< max)
     }
 
-    static func randomDate(startingFrom startYear: Int, upTo endYear: Int) -> Date {
+    static func randomDate(startingFrom startYear: Int) -> Date {
         // Create a date formatter to help with the generation of dates
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-
         // Create the start and end dates from the given years
-        guard let startDate = dateFormatter.date(from: "\(startYear)/01/01"),
-              let endDate = dateFormatter.date(from: "\(endYear)/12/31")
+        guard let startDate = dateFormatter.date(from: "\(startYear)/01/01")
         else {
-            fatalError("Invalid date range provided.")
+            fatalError("Invalid start date provided.")
         }
 
         // Get the time intervals for the start and end dates
         let startInterval = startDate.timeIntervalSince1970
-        let endInterval = endDate.timeIntervalSince1970
+        let endInterval = Date.now.timeIntervalSince1970
 
         // Generate a random time interval between the start and end intervals
         let randomInterval = TimeInterval.random(in: startInterval ... endInterval)

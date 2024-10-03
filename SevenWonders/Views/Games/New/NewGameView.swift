@@ -64,26 +64,23 @@ struct NewGameView: View {
                 }
 
                 Section {
-                    Button("Save Game") {
-                        saveNewGame()
-                    }.alert(isPresented: $isPresentingError) {
-                        Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
-                    }
-                }
-
-                Section {
                     Button("Random Game") {
                         let newGame: Game = PreviewMock.generateRandomGame()
                         modelContext.insert(newGame)
                     }
                 }
             }
-            .navigationTitle("New Game")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         isPresentingNewGame = false // Dismiss the sheet without saving
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save Game") {
+                        saveNewGame()
+                    }.alert(isPresented: $isPresentingError) {
+                        Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
                     }
                 }
             }

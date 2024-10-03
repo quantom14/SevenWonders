@@ -14,7 +14,6 @@ struct ProfileHostView: View {
     @Query(sort: \Profile.name) private var profiles: [Profile]
 
     @State private var isPresentingNewProfile = false
-    @State private var isPresentingEditProfile = false
 
     var body: some View {
         NavigationView {
@@ -31,8 +30,6 @@ struct ProfileHostView: View {
                 ToolbarItem {
                     if profiles.isEmpty {
                         AddProfileButton(isPresentingNewProfile: $isPresentingNewProfile)
-                    } else {
-                        EditProfileButton(isPresentingEditProfile: $isPresentingEditProfile)
                     }
                 }
             }
@@ -43,9 +40,6 @@ struct ProfileHostView: View {
             }
             .sheet(isPresented: $isPresentingNewProfile) {
                 NewProfileView(isPresented: $isPresentingNewProfile)
-            }
-            .sheet(isPresented: $isPresentingEditProfile) {
-                EditProfileView(isPresented: $isPresentingEditProfile)
             }
         }
     }
@@ -58,18 +52,6 @@ struct ProfileHostView: View {
                 isPresentingNewProfile = true
             }) {
                 Image(systemName: "plus")
-            }
-        }
-    }
-
-    private struct EditProfileButton: View {
-        @Binding var isPresentingEditProfile: Bool
-
-        var body: some View {
-            Button(action: {
-                isPresentingEditProfile = true
-            }) {
-                Text("Edit")
             }
         }
     }

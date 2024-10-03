@@ -38,20 +38,14 @@ struct NewProfileView: View {
                         }
                     }
                 }
-
-                Section {
+            }
+            .navigationTitle("New Profile")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         saveProfile()
                     }
                     .disabled(name.isEmpty)
-                }
-            }
-            .navigationTitle("New Profile")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Cancel") {
-                        isPresented = false // Dismiss the sheet without saving
-                    }
                 }
             }
         }

@@ -12,6 +12,9 @@ struct ProfileView: View {
     @Query private var games: [Game]
     var profile: Profile
 
+    @State private var isPresented: Bool = false
+    @State private var isPressing: Bool = false
+
     var body: some View {
         Form {
             Section(header: Text("Player")) {
@@ -20,9 +23,22 @@ struct ProfileView: View {
                         .font(.largeTitle)
                         .padding()
                     Spacer()
-                    ProfileImageView(imageData: profile.profileImage)
+                    ProfileImageView(imageData: profile.profileImageData)
+                        .onLongPressGesture(minimumDuration: 0.3, pressing: { pressing in
+                            isPressing = pressing
+                            if pressing {
+                                let generator = UIImpactFeedbackGenerator(style: .medium)
+                                generator.impactOccurred()
+                            }
+                        }) {
+                            isPresented = true
+                        }
+                        .shadow(color: isPressing ? Color.gray.opacity(0.6) : Color.clear, radius: 10, x: 0, y: 0)
+                        .scaleEffect(isPressing ? 1.1 : 1.0) // Scale the circle when pressing
+                        .animation(.easeInOut(duration: 0.3), value: isPressing) // Smooth animation
                 }
             }
+
             Section(header: Text("Player Information")) {
                 HStack {
                     Text("Games Played")
@@ -41,6 +57,9 @@ struct ProfileView: View {
                 }.padding()
             }
         }
+        .sheet(isPresented: $isPresented) {
+            EditProfileView(isPresented: $isPresented)
+        }
     }
 
     private func getHighscore(profile: Profile) -> Int {
@@ -56,7 +75,6 @@ struct ProfileView: View {
                 return 0 // Default case, though it should not occur due to the filter
             }
         }
-
         return scores.max() ?? 0 // Return the highest score, defaulting to 0 if empty
     }
 
