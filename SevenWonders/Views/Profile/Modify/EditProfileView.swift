@@ -15,9 +15,10 @@ struct EditProfileView: View {
 
     @Binding var isPresented: Bool
 
-    @State private var profileImage: Data? = nil
     @State private var showAlert: Bool = false // State variable to show the alert
     @State var name: String = ""
+    @State var isImagePickerPresented: Bool = false
+    @State private var selectedImage: UIImage?
 
     var body: some View {
         NavigationView {
@@ -28,7 +29,17 @@ struct EditProfileView: View {
                             .font(.largeTitle)
                             .padding()
                         Spacer()
-                        ProfileImagePickerView(profileImage: $profileImage)
+
+                        // Button to show image picker
+                        Button(action: {
+                            isImagePickerPresented = true
+                        }) {
+                            ProfileImageView(uiImage: selectedImage)
+                        }
+                        .sheet(isPresented: $isImagePickerPresented) {
+                            // Present the ImagePickerView
+                            ProfileImagePickerView(selectedImage: $selectedImage, isPresented: $isImagePickerPresented)
+                        }
                     }
                 }
 
@@ -47,7 +58,9 @@ struct EditProfileView: View {
             .onAppear {
                 if let profile = profiles.first {
                     name = profile.name
-                    profileImage = profile.profileImage
+                    if let profileImage = profile.profileImageData {
+                        selectedImage = UIImage(data: profileImage)
+                    }
                 }
             }
             .toolbar {
@@ -73,7 +86,7 @@ struct EditProfileView: View {
     private func saveProfile() {
         guard let profile = profiles.first else { return } // Get the first profile to update
         profile.name = name // Update the name
-        profile.profileImage = profileImage // Update the profile image
+        profile.profileImageData = selectedImage?.pngData() // Update the profile image
         try? modelContext.save() // Save the changes
         isPresented = false
     }
@@ -86,7 +99,7 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    @Previewable @State var isPresentedMock = true
+    @Previewable @State var isPresentedMock = false
 
     EditProfileView(isPresented: $isPresentedMock)
         .environment(\.modelContext, PreviewMock.createModelContextMock())

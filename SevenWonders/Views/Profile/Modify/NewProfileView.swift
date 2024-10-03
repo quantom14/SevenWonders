@@ -10,10 +10,13 @@ import SwiftUI
 
 struct NewProfileView: View {
     @Binding var isPresented: Bool
+
     @Environment(\.modelContext) private var modelContext
 
     @State private var name: String = ""
-    @State private var profileImage: Data?
+
+    @State var isImagePickerPresented: Bool = false
+    @State private var selectedImgage: UIImage?
 
     var body: some View {
         NavigationView {
@@ -24,7 +27,15 @@ struct NewProfileView: View {
                             .font(.largeTitle)
                             .padding()
                         Spacer()
-                        ProfileImagePickerView(profileImage: $profileImage)
+                        Button(action: {
+                            isImagePickerPresented = true
+                        }) {
+                            ProfileImageView(uiImage: selectedImgage)
+                        }
+                        .sheet(isPresented: $isImagePickerPresented) {
+                            // Present the ImagePickerView
+                            ProfileImagePickerView(selectedImage: $selectedImgage, isPresented: $isImagePickerPresented)
+                        }
                     }
                 }
 
@@ -48,7 +59,7 @@ struct NewProfileView: View {
 
     private func saveProfile() {
         // Create and save the profile
-        let newProfile = Profile(name: name, profileImage: profileImage)
+        let newProfile = Profile(name: name, profileImage: selectedImgage?.pngData())
         modelContext.insert(newProfile)
         try? modelContext.save()
         // Dismiss the sheet after saving
@@ -59,6 +70,6 @@ struct NewProfileView: View {
 #Preview {
     @Previewable @State var isPresentedMock = true
 
-    NewProfileView(isPresented: $isPresentedMock)
+    NewProfileView(isPresented: $isPresentedMock, isImagePickerPresented: false)
         .environment(\.modelContext, PreviewMock.createModelContextMock())
 }
