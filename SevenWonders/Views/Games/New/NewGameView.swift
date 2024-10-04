@@ -44,14 +44,14 @@ struct NewGameView: View {
                 }
 
                 Section(header: Text("Points")) {
-                    PointsRowView(points: $bluePoints, systemImage: "square.fill", color: Color.blue)
-                    PointsRowView(points: $greenPoints, systemImage: "square.fill", color: Color.green)
-                    PointsRowView(points: $yellowPoints, systemImage: "square.fill", color: Color.yellow)
-                    PointsRowView(points: $purplePoints, systemImage: "square.fill", color: Color.purple)
+                    PointsRowView(points: $bluePoints, systemImage: "rectangle.portrait.fill", color: Color.blue)
+                    PointsRowView(points: $greenPoints, systemImage: "rectangle.portrait.fill", color: Color.green)
+                    PointsRowView(points: $yellowPoints, systemImage: "rectangle.portrait.fill", color: Color.yellow)
+                    PointsRowView(points: $purplePoints, systemImage: "rectangle.portrait.fill", color: Color.purple)
                     PointsRowView(points: $pyramidPoints, systemImage: "pyramid.fill", color: Color.brown)
                     PointsRowView(points: $tokenPoints, systemImage: "circle.fill", color: Color.green)
                     PointsRowView(points: $coinPoints, systemImage: "circle.fill", color: Color.brown)
-                    PointsRowView(points: $militaryPoints, systemImage: "square.fill", color: Color.red)
+                    PointsRowView(points: $militaryPoints, systemImage: "rectangle.portrait.fill", color: Color.red)
                 }
 
                 Section(header: Text("Victory Conditions")) {
