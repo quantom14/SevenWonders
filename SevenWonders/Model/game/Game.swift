@@ -14,6 +14,12 @@ final class Game {
 
     var date: Date
     
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+    
     var player1: Player
     var player2: Player
     
@@ -31,6 +37,10 @@ final class Game {
     
     func displayPlayers() -> String {
         return "\(player1.name) vs. \(player2.name)"
+    }
+    
+    func formattedDate() -> String {
+        return Game.dateFormatter.string(from: date)
     }
     
     private init(date: Date, player1: Player, player2: Player) {

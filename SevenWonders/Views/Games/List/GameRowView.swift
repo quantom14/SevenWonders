@@ -11,17 +11,12 @@ import SwiftUI
 struct GameRowView: View {
     var game: Game
 
-    let dateFormat = Date.FormatStyle()
-        .year(.defaultDigits)
-        .month(.twoDigits)
-        .day(.twoDigits)
-
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(game.displayPlayers())
                     .bold()
-                Text(game.date, format: dateFormat)
+                Text(game.formattedDate())
             }
             Spacer()
             HStack {

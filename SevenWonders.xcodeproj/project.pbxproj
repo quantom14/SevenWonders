@@ -279,9 +279,9 @@
 		D5B3E40A2C9730E6001644D8 /* SevenWonders */ = {
 			isa = PBXGroup;
 			children = (
+				D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */,
 				D5248CBE2C9EEE17006862A7 /* Views */,
 				D5A6B6792C973F4100FB2F25 /* Model */,
-				D5B3E40B2C9730E6001644D8 /* SevenWondersApp.swift */,
 				D5B3E4112C9730E8001644D8 /* Assets.xcassets */,
 				D5B3E4132C9730E8001644D8 /* Preview Content */,
 			);
